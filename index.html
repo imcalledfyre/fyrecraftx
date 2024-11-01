@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 		<meta name="description" content="EaglercraftX 1.8 test directory HTML page" />
 		<meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.8, 1.8.8" />
-		<title>EaglercraftX 1.8</title>
+		<title>FyrecraftX</title>
 		<meta property="og:locale" content="en-US" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="EaglercraftX 1.8" />
@@ -15,8 +15,8 @@
 		<script type="text/javascript">
 			"use strict";
 			window.addEventListener("load", function() {
-				if(window.location.href.indexOf("file:") === 0) {
-					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
+				if(window.location.href.indexOf("https://") === 0) {
+					alert("You are using HTTPS://. You must use HTTP:// for multiplayer to wurk!!");
 				}else {
 					var relayId = Math.floor(Math.random() * 3);
 					window.eaglercraftXOpts = {
@@ -28,12 +28,14 @@
 						logInvalidCerts: true,
 						crashOnUncaughtExceptions: true,
 						servers: [
-							{ addr: "ws://localhost:8081/", name: "Local test server" }
+							{ addr: "ws://test.imcalledfyre.com:21859/", name: "Fyrecraft: Multiplayer" },
+							{ addr: "ws://fyrecraft-server.vonar.ch:21859/", name: "Fyrecraft Proxy 1" },
+							{ addr: "ws://147.185.221.23:21859/", name: "Fyrecraft Proxy 2" },
+							{ addr: "ws://traffic-should.gl.at.ply.gg:21859/", name: "Fyrecraft Proxy 3" }
 						],
 						relays: [
-							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId === 0 },
-							{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId === 1 },
-							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId === 2 }
+							{ addr: "wss://no-way/", comment: "SINGLEPLAYER HOSTING HAS BEEN DISABLED", primary: relayId === 0 }
+						
 						]
 					};
 
